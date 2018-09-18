@@ -301,9 +301,7 @@ class AccountCreationForm(forms.Form):
                     raise ValidationError(_("Unauthorized email address."))
         if email_exists_or_retired(email):
             raise ValidationError(
-                _(
-                    "It looks like {email} belongs to an existing account. Try again with a different email address."
-                ).format(email=email)
+                _("It looks like this email was already registered. Try again with a different email address.")
             )
         return email
 
