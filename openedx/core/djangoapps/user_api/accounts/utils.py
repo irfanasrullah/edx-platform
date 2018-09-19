@@ -115,7 +115,6 @@ def retrieve_last_sitewide_block_completed(user):
     if not completion_waffle.waffle().is_enabled(completion_waffle.ENABLE_COMPLETION_TRACKING):
         return
 
-
     latest_completions_by_course = BlockCompletion.latest_blocks_completed_all_courses(user)
 
     known_site_configs = [
